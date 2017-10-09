@@ -15,6 +15,11 @@
 
   <body>
     <%= render partial: "shared/navbar" %>
+    <% flash.each do |key, value| %>
+      <div class="alert <%= flash_class(key) %>">
+        <%= value %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>

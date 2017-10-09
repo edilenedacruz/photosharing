@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'faker'
 gem 'will_paginate'
+gem 'omniauth-google-oauth2'
 gem 'figaro'
 gem 'simplecov', :require => false, :group => :test
 gem 'bootstrap', '~> 4.0.0.alpha6'

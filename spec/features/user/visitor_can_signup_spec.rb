@@ -20,7 +20,7 @@ RSpec.feature "Visitor" do
     expect(current_path).to eq(new_user_path)
   end
 
-  it "can enter personal information" do
+  it "can create account" do
 
     visit new_user_path
 
@@ -33,9 +33,8 @@ RSpec.feature "Visitor" do
     fill_in "Password", with: "password"
     fill_in "Password confirmation", with: "password"
 
-    click_link "Sign Up"
+    click_button "Sign Up"
 
-    # expect(current_path).to eq(root_path)
-    expect(page).to have_content("Logout")
+    expect(page).to have_content("Hello, Jane")
   end
 end
