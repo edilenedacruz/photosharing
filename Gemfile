@@ -33,6 +33,7 @@ gem 'faker'
 gem 'will_paginate'
 gem 'figaro'
 gem 'simplecov', :require => false, :group => :test
+gem 'bootstrap', '~> 4.0.0.alpha6'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
