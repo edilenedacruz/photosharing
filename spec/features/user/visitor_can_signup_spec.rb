@@ -35,6 +35,7 @@ RSpec.feature "Visitor" do
 
     click_button "Sign Up"
 
-    expect(page).to have_content("Hello, Jane")
+    expect(current_path).to eq(root_path)
+    expect(page).to have_content("Logout")
   end
 end

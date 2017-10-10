@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       if @user && @user.authenticate(params[:session][:password])
         session[:user_id] = @user.id
         flash[:success] = "You are now logged in."
-        redirect_to user_path(@user.slug)
+        redirect_to root_path
       else
         flash[:error] = "Username or Password are Incorrect"
         render :new
@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
     @user = User.from_omniauth(request.env["omniauth.auth"])
     session[:user_id] = @user.id
     flash[:success] = "You are now logged in."
-    redirect_to user_path(@user.slug)
+    redirect_to root_path
   end
 
   def destroy

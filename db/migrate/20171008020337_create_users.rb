@@ -13,6 +13,8 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :provider
       t.string :uid
       t.string :token_expiration
+      t.integer :role, default: 0
+      
 
       t.timestamps null: false
     end

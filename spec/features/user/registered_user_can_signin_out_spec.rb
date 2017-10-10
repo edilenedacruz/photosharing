@@ -14,7 +14,7 @@ RSpec.feature "Registered User" do
       click_on "Login"
     end
 
-    expect(page).to have_content("Hello, #{user.first_name}")
+    expect(current_path).to eq(root_path)
   end
 
   it "Logged in user can logout" do
@@ -30,7 +30,7 @@ RSpec.feature "Registered User" do
       click_on "Login"
     end
 
-    expect(page).to have_content("Hello, #{user.first_name}")
+    expect(current_path).to eq(root_path)
 
     within (".login-bar") do
       click_link "Logout"

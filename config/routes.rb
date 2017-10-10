@@ -6,6 +6,5 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   get '/auth/:provider/callback', to: 'sessions#create_from_google'
-  # get '/auth/google', as: :login
   resources :users
 end

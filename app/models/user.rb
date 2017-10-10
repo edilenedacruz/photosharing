@@ -1,19 +1,14 @@
 class User < ApplicationRecord
+  extend FriendlyId
+  friendly_id :username, use: :slugged
   has_secure_password
-  before_validation :generate_slug
 
   validates :first_name, :last_name, :username, :email, :password, presence: true
   validates :email, :username, uniqueness: true
 
+  enum role: %w(registered_user admin)
+
   private
-
-  def generate_slug
-    self.slug = username.parameterize
-  end
-
-  def to_param
-    slug
-  end
 
   def self.from_omniauth(auth)
     user = where(provider: auth["provider"], uid: auth["uid"]).first_or_initialize.tap do |user|

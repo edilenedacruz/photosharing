@@ -35,6 +35,7 @@ gem "omniauth-google-oauth2", "~> 0.2.1"
 gem 'figaro'
 gem 'simplecov', :require => false, :group => :test
 gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'friendly_id', '~> 5.1.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
