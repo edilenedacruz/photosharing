@@ -1,14 +1,20 @@
 require 'rails_helper'
 
 RSpec.feature "Registered User" do
-  xit "can update personal information" do
+  it "can update personal information" do
     user = create(:user)
 
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-    within(".login-bar") do
-      click_link "You"
-    end
+    visit root_path
 
+    click_link "You"
+    click_link "Profile"
+
+    expect(current_path).to eq(user_path(user))
+
+    click_link "Edit your personal information"
+
+    expect(current_path).to eq(edit_user_path(user))
   end
 end
