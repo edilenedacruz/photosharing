@@ -1,0 +1,6 @@
+<h1>Personal information</h1>
+First name: <%= @user.first_name %>
+Last name: <%= @user.last_name %>
+Email: <%= @user.email %>
+Phone: <%= @user.phone %>
+<%= link_to "Edit your personal information", edit_user_path(@user) %>
