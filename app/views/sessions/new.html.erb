@@ -1,5 +1,4 @@
 <div class="login">
-
 <%= form_for :session, url: login_path do |f| %>
   <%=  f.label :username %>
   <%= f.text_field :username %>
@@ -8,3 +7,5 @@
   <%= f.submit "Login" %>
 <% end %>
 </div>
+<br>
+<%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %>

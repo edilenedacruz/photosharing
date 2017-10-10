@@ -7,10 +7,15 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
       if @user.save
         session[:user_id] = @user.id
-        redirect_to user_path(@user.username)
+        redirect_to user_path(@user.slug)
       else
         render :new
       end
+  end
+
+  def show
+    # binding.pry
+    @user = User.find_by_slug(params[:slug])
   end
 
   private
